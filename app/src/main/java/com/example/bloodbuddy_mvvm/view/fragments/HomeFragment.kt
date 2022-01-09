@@ -12,11 +12,12 @@ import com.example.bloodbuddy_mvvm.R
 import com.example.bloodbuddy_mvvm.databinding.FragmentHomeBinding
 import com.example.bloodbuddy_mvvm.viewmodel.HomeViewModel
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment() , OnMapReadyCallback {
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
 
