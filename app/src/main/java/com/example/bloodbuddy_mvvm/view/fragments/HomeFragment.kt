@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -40,6 +41,15 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
         /*homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })*/
+        val linearLayout: LinearLayout = binding.newrequest
+        linearLayout.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val transaction = activity?.supportFragmentManager?.beginTransaction()
+                transaction?.replace(R.id.container,RequestFragment())
+                transaction?.disallowAddToBackStack()
+                transaction?.commit()
+            }
+        })
         val mapFragment = activity?.supportFragmentManager?.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
