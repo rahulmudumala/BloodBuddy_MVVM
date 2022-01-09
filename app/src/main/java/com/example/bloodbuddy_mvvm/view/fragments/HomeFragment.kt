@@ -45,7 +45,7 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
         newreqlayout.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 val transaction = activity?.supportFragmentManager?.beginTransaction()
-                transaction?.replace(R.id.container,RequestFragment())
+                transaction?.replace(R.id.nav_host_fragment_activity_main,RequestFragment())
                 transaction?.disallowAddToBackStack()
                 transaction?.commit()
             }
@@ -54,7 +54,7 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
         nearbylayout.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 val transaction = activity?.supportFragmentManager?.beginTransaction()
-                transaction?.replace(R.id.container,NearbyFragment())
+                transaction?.replace(R.id.nav_host_fragment_activity_main,NearbyFragment())
                 transaction?.disallowAddToBackStack()
                 transaction?.commit()
             }
@@ -63,7 +63,7 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
         bloodreqlayout.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 val transaction = activity?.supportFragmentManager?.beginTransaction()
-                transaction?.replace(R.id.container,BloodRequestFragment())
+                transaction?.replace(R.id.nav_host_fragment_activity_main,BloodRequestFragment())
                 transaction?.disallowAddToBackStack()
                 transaction?.commit()
             }
