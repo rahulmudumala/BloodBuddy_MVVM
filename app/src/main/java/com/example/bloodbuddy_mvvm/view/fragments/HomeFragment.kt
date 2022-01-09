@@ -41,8 +41,8 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
         /*homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })*/
-        val linearLayout: LinearLayout = binding.newrequest
-        linearLayout.setOnClickListener(object : View.OnClickListener{
+        val newreqlayout: LinearLayout = binding.newrequest
+        newreqlayout.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
                 val transaction = activity?.supportFragmentManager?.beginTransaction()
                 transaction?.replace(R.id.container,RequestFragment())
@@ -50,6 +50,26 @@ class HomeFragment : Fragment() , OnMapReadyCallback {
                 transaction?.commit()
             }
         })
+        val nearbylayout: LinearLayout = binding.nearby
+        nearbylayout.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val transaction = activity?.supportFragmentManager?.beginTransaction()
+                transaction?.replace(R.id.container,NearbyFragment())
+                transaction?.disallowAddToBackStack()
+                transaction?.commit()
+            }
+        })
+        val bloodreqlayout: LinearLayout = binding.donateblood
+        bloodreqlayout.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val transaction = activity?.supportFragmentManager?.beginTransaction()
+                transaction?.replace(R.id.container,BloodRequestFragment())
+                transaction?.disallowAddToBackStack()
+                transaction?.commit()
+            }
+        })
+
+
         val mapFragment = activity?.supportFragmentManager?.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
